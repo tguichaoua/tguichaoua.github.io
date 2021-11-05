@@ -27,11 +27,6 @@ async function init() {
             a.href = `#${page.file}`;
             a.innerHTML = page[lang];
 
-            if (page.ile === currentPage) {
-                a.classList.add('active');
-                currentLink = a;
-            }
-
             nav.appendChild(a);
             links.set(page.file, a);
         }
