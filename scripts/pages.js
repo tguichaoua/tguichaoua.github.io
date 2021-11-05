@@ -20,7 +20,6 @@ async function init() {
 
     // Create links in the nav
     {
-        const currentPage = getPageName();
         const lang = getLanguage();
         for (page of pageData.values()) {
             const a = document.createElement('a');
