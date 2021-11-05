@@ -45,9 +45,13 @@ article {
     align-items: flex-end;
     flex-wrap: wrap;
     justify-content: center;
+
+    margin-top: -10px;
 }
 
 .links a {
+    margin-top: 10px;
+
     margin-left: 0.6em;
 
     padding: 0.5em 1em;
