@@ -39,6 +39,8 @@ async function init() {
         currentLink?.classList.remove('active');
         currentLink = links.get(page);
         currentLink.classList.add('active');
+
+        window.dispatchEvent(new Event('page-rendered'));
     }
 
     async function languageChange() {
