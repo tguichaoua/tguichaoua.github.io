@@ -6,20 +6,20 @@ const LANGUAGES = ['fr', 'en'];
  * @returns the user preferred language
  */
 function getPreferredLanguage() {
-    if (/^fr\b/.test(navigator.language)) {
-        return 'fr';
-    }
-    return 'en';
+  if (/^fr\b/.test(navigator.language)) {
+    return 'fr';
+  }
+  return 'en';
 }
 
 /**
- * Gets the defined language from cookies if avaible,
+ * Gets the defined language from localStorage if avaible,
  * otherwise returns the preferred language.
  * @returns the defined language
  */
 function getLanguage() {
-    const lang = Cookies.get('lang');
-    return LANGUAGES.includes(lang) ? lang : getPreferredLanguage();
+  const lang = localStorage.getItem('lang');
+  return lang && LANGUAGES.includes(lang) ? lang : getPreferredLanguage();
 }
 
 /**
@@ -28,7 +28,7 @@ function getLanguage() {
  * @param {string} lang
  */
 function setLanguage(lang) {
-    if (!LANGUAGES.includes(lang) || lang == getLanguage()) return;
-    Cookies.set('lang', lang);
-    window.dispatchEvent(new Event('x-langchange'));
+  if (!LANGUAGES.includes(lang) || lang == getLanguage()) return;
+  localStorage.setItem('lang', lang);
+  window.dispatchEvent(new Event('x-langchange'));
 }
