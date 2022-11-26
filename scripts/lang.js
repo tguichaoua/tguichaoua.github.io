@@ -6,9 +6,7 @@ const LANGUAGES = ['fr', 'en'];
  * @returns the user preferred language
  */
 function getPreferredLanguage() {
-  if (/^fr\b/.test(navigator.language)) {
-    return 'fr';
-  }
+  if (/^fr\b/.test(navigator.language)) return 'fr';
   return 'en';
 }
 

@@ -32,24 +32,22 @@ window.addEventListener('page-rendered', function () {
 
   // Use an intersection observer to start the animation when the
   // skill meter is visible.
-  const startAnimation = (entries, _) => {
-    entries.forEach((entry) => {
-      if (entry.isIntersecting) {
-        entry.target.classList.toggle('animated', true);
-      }
-    });
-  };
   const options = { root: null, rootMargin: '0px', threshold: 0.2 };
-  const observer = new IntersectionObserver(startAnimation, options);
+  const observer = new IntersectionObserver(
+    (entries, _) =>
+      entries
+        .filter((entry) => entry.isIntersecting)
+        .forEach((entry) => entry.target.classList.toggle('animated', true)),
+    options,
+  );
 
   // Create a style sheet to store keyframes to animate skill meters.
   const style = document.createElement('style');
 
   for (let skill_div of document.querySelectorAll('.skills')) {
     let skills_values = skills[skill_div.id];
-    if (skills_values === undefined) {
-      continue;
-    }
+    if (skills_values === undefined) continue;
+
     for (let [name, { value, color, link }] of Object.entries(skills_values)) {
       let safe_name = name.replace(/\W/g, '_');
       const keyframes_name = `skill-meter-progress-${safe_name}`;

@@ -1,8 +1,7 @@
 async function set_last_update_date() {
   const el = document.getElementById('last-update');
-  if (el === undefined) {
-    return;
-  }
+  if (el === undefined) return;
+
   const last_commit = await fetch('https://api.github.com/repos/tguichaoua/tguichaoua.github.io/commits/main').then(
     (res) => res.json(),
   );
