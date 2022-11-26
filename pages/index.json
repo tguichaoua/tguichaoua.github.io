@@ -1,20 +1,20 @@
 {
-    "defaultPage": "home",
-    "pages": [
-        {
-            "file": "home",
-            "fr": "<i class=\"fas fa-home\"></i>",
-            "en": "<i class=\"fas fa-home\"></i>"
-        },
-        {
-            "file": "cv",
-            "fr": "CV",
-            "en": "Resumé"
-        },
-        {
-            "file": "project",
-            "fr": "Mes Projets",
-            "en": "My Projects"
-        }
-    ]
+  "defaultPage": "home",
+  "pages": [
+    {
+      "file": "home",
+      "fr": "<i class=\"fas fa-home\"></i>",
+      "en": "<i class=\"fas fa-home\"></i>"
+    },
+    {
+      "file": "cv",
+      "fr": "CV",
+      "en": "Resume"
+    },
+    {
+      "file": "project",
+      "fr": "Mes Projets",
+      "en": "My Projects"
+    }
+  ]
 }
