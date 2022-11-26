@@ -60,7 +60,7 @@ window.addEventListener('page-rendered', function () {
       skill_meter.setAttribute('width', size);
       skill_meter.setAttribute('height', size);
 
-      let text = `<text fill="#ffffff" font-size="14" font-family="Verdana" x="57" y="57" text-anchor="middle" dy=".3em">${name}</text>`;
+      let text = `<text class="skill-text" font-size="14" font-family="Verdana" x="57" y="57" text-anchor="middle" dy=".3em">${name}</text>`;
 
       if (link !== undefined) {
         text = `<a href="${link}" target="_blank">${text}</a>`;

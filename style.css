@@ -171,3 +171,7 @@ div.skills {
 .skill-meter:not(.animated) .skill-value {
   stroke: none;
 }
+
+.skill-text {
+  fill: var(--text-main);
+}
