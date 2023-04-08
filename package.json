@@ -7,7 +7,6 @@
     "build": "npm run clean:all && parcel build --no-source-maps",
     "clean": "rimraf ./dist",
     "clean:all": "rimraf ./dist ./.parcel-cache",
-    "deploy": "node scripts/gh-pages-deploy.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "devDependencies": {
