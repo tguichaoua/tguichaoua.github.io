@@ -4,6 +4,7 @@ import { FaGithubSquare } from "react-icons/fa";
 
 import { TextSection } from "./components/text-section";
 import { MagicText } from "./components/magic-text";
+import { Paragraph } from "./components/paragraph";
 
 export function App() {
   return (
@@ -32,7 +33,7 @@ export function App() {
 
       <main className="flex flex-col items-center w-[80%] mx-auto">
         <TextSection title="About me" className="w-full mb-3">
-          <p className="text-justify">
+          <Paragraph>
             Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris
             mattis sapien placerat sagittis volutpat. Donec at metus
             condimentum, blandit mi in, efficitur ante. Morbi cursus convallis
@@ -42,10 +43,10 @@ export function App() {
             cursus elit. Integer id nulla est. Nam quis aliquet diam, vel
             laoreet quam. Nullam feugiat felis ut nisl laoreet, at bibendum
             purus dignissim. Cras sodales ornare aliquam.
-          </p>
+          </Paragraph>
         </TextSection>
         <TextSection title="Some Long Text" className="w-full mb-3">
-          <p className="text-justify">
+          <Paragraph>
             Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris
             mattis sapien placerat sagittis volutpat. Donec at metus
             condimentum, blandit mi in, efficitur ante. Morbi cursus convallis
@@ -55,10 +56,10 @@ export function App() {
             cursus elit. Integer id nulla est. Nam quis aliquet diam, vel
             laoreet quam. Nullam feugiat felis ut nisl laoreet, at bibendum
             purus dignissim. Cras sodales ornare aliquam.
-          </p>
+          </Paragraph>
         </TextSection>
         <TextSection title="Lorem Ipsum" className="w-full mb-3">
-          <p className="text-justify">
+          <Paragraph>
             Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris
             mattis sapien placerat sagittis volutpat. Donec at metus
             condimentum, blandit mi in, efficitur ante. Morbi cursus convallis
@@ -68,7 +69,7 @@ export function App() {
             cursus elit. Integer id nulla est. Nam quis aliquet diam, vel
             laoreet quam. Nullam feugiat felis ut nisl laoreet, at bibendum
             purus dignissim. Cras sodales ornare aliquam.
-          </p>
+          </Paragraph>
         </TextSection>
 
         <p className="mt-20 whitespace-nowrap">Work in progress ...</p>
