@@ -96,9 +96,7 @@ export function App() {
         </TextSection>
       </main>
 
-      <hr className="w-[30%] mx-auto h-px my-8 bg-gray-700 border-0 dark:bg-gray-200" />
-
-      <footer className="p-5 text-xs sm:text-sm">
+      <footer className="px-5 py-2 mt-5 text-xs sm:text-sm border-t-2">
         © 2023 Tristan Guichaoua
       </footer>
     </>
