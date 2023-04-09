@@ -96,7 +96,7 @@ export function App() {
         </TextSection>
       </main>
 
-      <footer className="px-5 py-2 mt-5 text-xs sm:text-sm border-t-2">
+      <footer className="px-5 py-2 mt-5 text-xs sm:text-sm border-t-2 border-t-gray-700 dark:border-t-gray-200">
         © 2023 Tristan Guichaoua
       </footer>
     </>
