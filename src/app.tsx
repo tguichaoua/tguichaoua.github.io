@@ -5,11 +5,14 @@ import { FaGithubSquare, FaLinkedin } from "react-icons/fa";
 import { TextSection } from "./components/text-section";
 import { MagicText } from "./components/magic-text";
 import { Paragraph } from "./components/paragraph";
+import { CatRule } from "./components/cat-rule";
 
 export function App() {
   return (
     <>
-      <header role="banner" className="text-center pt-5">
+      <header role="banner" className="text-center my-5">
+        <CatRule />
+
         <h1 className="text-3xl sm:text-5xl lg:text-7xl whitespace-nowrap my-5">
           <MagicText color="red">Tristan Guichaoua</MagicText>
         </h1>
@@ -39,9 +42,11 @@ export function App() {
             <FaLinkedin />
           </a>
         </div>
-      </header>
 
-      <hr className="w-[30%] mx-auto h-px my-8 bg-gray-700 border-0 dark:bg-gray-200" />
+        <div className="mt-5">
+          <CatRule />
+        </div>
+      </header>
 
       <main className="flex flex-col items-center w-[80%] mx-auto">
         <TextSection title="About me" className="w-full">
