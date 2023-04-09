@@ -49,8 +49,10 @@ export function App() {
       </header>
 
       <main className="flex flex-col items-center w-[80%] mx-auto">
-        <div className="my-5 text-center border-yellow-300 border-2 rounded-xl px-5 py-3">
-          <h2 className="text-yellow-300">/!\ Work in progress /!\</h2>
+        <div className="my-5 text-center border-yellow-500 dark:border-yellow-300 border-2 rounded-xl px-5 py-3">
+          <h2 className="text-yellow-500 dark:text-yellow-300">
+            /!\ Work in progress /!\
+          </h2>
           <p>This website is still under construction</p>
         </div>
 
