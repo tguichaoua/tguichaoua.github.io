@@ -10,7 +10,7 @@ export function Paragraph({ children, className, style }: Props) {
   return (
     <p
       className={
-        "text-justify first-letter:text-purple-300 first-letter:text-4xl " +
+        "text-justify first-letter:text-purple-500 dark:first-letter:text-purple-300 first-letter:text-4xl " +
         (className ?? "")
       }
       style={style}
