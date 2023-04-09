@@ -13,9 +13,9 @@ interface Props {
 export function MagicText({ color, children }: Props) {
   const wordClassName = `first-letter:text-${color}-300 inline-block`;
   const spans = children.split(/\s+/).map((word, i) => (
-    <span key={i} className={wordClassName}>
-      {word}{" "}
-    </span>
+    <React.Fragment key={i}>
+      <span className={wordClassName}>{word}</span>{" "}
+    </React.Fragment>
   ));
 
   return <>{spans}</>;
