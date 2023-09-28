@@ -9,9 +9,9 @@ export function CatRule(props: CatRuleProps) {
       className={'flex flex-row items-center ' + (className ?? '')}
       {...divProps}
     >
-      <span className="flex-grow h-px bg-gray-700 border-0 dark:bg-gray-200 inline-block"></span>
+      <span className="flex-grow h-px border-0 inline-block bg-current"></span>
       <span>ฅ/ᐠ. ̫ .ᐟ\ฅ</span>
-      <span className="flex-grow h-px bg-gray-700 border-0 dark:bg-gray-200 inline-block"></span>
+      <span className="flex-grow h-px border-0 inline-block bg-current"></span>
     </div>
   );
 }
