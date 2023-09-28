@@ -1,9 +1,39 @@
+import { useEffect, useState } from 'react';
 import { FaGithubSquare, FaLinkedin } from 'react-icons/fa';
+import Masonry from 'react-layout-masonry';
 
 import { CatRule } from './components/cat-rule';
 import { Box } from './components/box';
+import {
+  Skill,
+  SkillIcon,
+  TextSkillIcon,
+  TextSkillIconContext,
+  TextSkillIconMode,
+} from './components/skill-icons';
 
 export function App() {
+  const [skillIconMode, setSkillIconMode] = useState<TextSkillIconMode>('icon');
+  const [profile, setProfile] = useState<'full' | 'skill'>('skill');
+
+  useEffect(() => {
+    function onKeypress(ev: KeyboardEvent) {
+      if (ev.key === 'o') {
+        setSkillIconMode((prev) => (prev === 'icon' ? 'text' : 'icon'));
+      }
+
+      if (ev.key === 'p') {
+        setProfile((prev) => (prev === 'full' ? 'skill' : 'full'));
+      }
+    }
+
+    document.addEventListener('keypress', onKeypress);
+
+    return () => {
+      document.removeEventListener('keypress', onKeypress);
+    };
+  }, []);
+
   return (
     <>
       <header role="banner" className="text-center my-5">
@@ -31,59 +61,17 @@ export function App() {
         <CatRule className="mt-5" />
       </header>
 
-      <main className="flex flex-col items-center w-[80%] mx-auto">
-        <Box theme="warn" className="my-5 text-center">
-          <h2 className="text-yellow-500 dark:text-yellow-300">
-            /!\ Work in progress /!\
-          </h2>
-          <p>This website is still under construction</p>
-        </Box>
+      <Box theme="warn" className="my-7 text-center w-fit mx-auto">
+        <h2 className="text-yellow-500 dark:text-yellow-300">
+          /!\ Work in progress /!\
+        </h2>
+        <p>This website is still under construction</p>
+      </Box>
 
-        <div title="About me" className="w-full">
-          <p>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris
-            mattis sapien placerat sagittis volutpat. Donec at metus
-            condimentum, blandit mi in, efficitur ante. Morbi cursus convallis
-            metus, eget finibus tellus pharetra id. Curabitur nisl libero,
-            malesuada eu magna non, condimentum euismod ante. Cras interdum
-            volutpat enim. Fusce ac magna eu orci blandit placerat. In sit amet
-            cursus elit. Integer id nulla est. Nam quis aliquet diam, vel
-            laoreet quam. Nullam feugiat felis ut nisl laoreet, at bibendum
-            purus dignissim. Cras sodales ornare aliquam.
-          </p>
-        </div>
-
-        <hr className="w-[10%] mx-auto h-1 my-8 bg-gray-700 border-0 dark:bg-gray-200" />
-
-        <div title="Some Long Text" className="w-full">
-          <p>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris
-            mattis sapien placerat sagittis volutpat. Donec at metus
-            condimentum, blandit mi in, efficitur ante. Morbi cursus convallis
-            metus, eget finibus tellus pharetra id. Curabitur nisl libero,
-            malesuada eu magna non, condimentum euismod ante. Cras interdum
-            volutpat enim. Fusce ac magna eu orci blandit placerat. In sit amet
-            cursus elit. Integer id nulla est. Nam quis aliquet diam, vel
-            laoreet quam. Nullam feugiat felis ut nisl laoreet, at bibendum
-            purus dignissim. Cras sodales ornare aliquam.
-          </p>
-        </div>
-
-        <hr className="w-[10%] mx-auto h-1 my-8 bg-gray-700 border-0 dark:bg-gray-200" />
-
-        <div title="Lorem Ipsum" className="w-full">
-          <p>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris
-            mattis sapien placerat sagittis volutpat. Donec at metus
-            condimentum, blandit mi in, efficitur ante. Morbi cursus convallis
-            metus, eget finibus tellus pharetra id. Curabitur nisl libero,
-            malesuada eu magna non, condimentum euismod ante. Cras interdum
-            volutpat enim. Fusce ac magna eu orci blandit placerat. In sit amet
-            cursus elit. Integer id nulla est. Nam quis aliquet diam, vel
-            laoreet quam. Nullam feugiat felis ut nisl laoreet, at bibendum
-            purus dignissim. Cras sodales ornare aliquam.
-          </p>
-        </div>
+      <main className="flex flex-col items-center w-[80%] mx-auto gap-5">
+        <TextSkillIconContext.Provider value={skillIconMode}>
+          {profile === 'skill' ? <ProfileSkill /> : <ProfileFull />}
+        </TextSkillIconContext.Provider>
       </main>
 
       <footer className="px-5 py-2 mt-[50px] text-xs sm:text-sm border-t-2 border-t-gray-700 dark:border-t-gray-200">
@@ -112,28 +100,157 @@ export function App() {
   );
 }
 
-function ColorSelector() {
-  const BUTTONS = [
-    { color: 'red', bg: 'bg-red-500' },
-    { color: 'green', bg: 'bg-green-500' },
-    { color: 'blue', bg: 'bg-blue-500' },
-  ] as const;
+function ProfileFull() {
+  return (
+    <>
+      <article className="w-full">
+        <h3 className="text-2xl font-bold">Who Am I ?</h3>
 
-  const COLORS = BUTTONS.map((b) => b.color);
+        <p>
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris mattis
+          sapien placerat sagittis volutpat. Donec at metus condimentum, blandit
+          mi in, efficitur ante. Morbi cursus convallis metus, eget finibus
+          tellus pharetra id. Curabitur nisl libero, malesuada eu magna non,
+          condimentum euismod ante. Cras interdum volutpat enim. Fusce ac magna
+          eu orci blandit placerat. In sit amet cursus elit. Integer id nulla
+          est. Nam quis aliquet diam, vel laoreet quam. Nullam feugiat felis ut
+          nisl laoreet, at bibendum purus dignissim. Cras sodales ornare
+          aliquam.
+        </p>
+      </article>
 
-  type Color = (typeof COLORS)[number];
+      <article className="w-full">
+        <h3 className="text-2xl font-bold">I am a Fullstack Web Developer</h3>
+        <p>
+          Fullstack means I can work on both the frontend i.e. what the client
+          see (a web page or a web app) and the backend i.e. the server that
+          host the website.
+        </p>
 
-  const setColor = (color: Color) => {
-    document.body.classList.remove(...COLORS);
-    document.body.classList.add(color);
-  };
+        <p>
+          For the frontend I'm using the web trinity languages :{' '}
+          <TextSkillIcon skill="Html" />, <TextSkillIcon skill="Css" /> and{' '}
+          <TextSkillIcon skill="Javascript" />. Actually I'm using more powerful
+          tools like <TextSkillIcon skill="Typescript" /> and{' '}
+          <TextSkillIcon skill="Vite" /> for the coding part,{' '}
+          <TextSkillIcon skill="React" /> to create dynamic app and{' '}
+          <TextSkillIcon skill="Tailwind" /> for the style.
+        </p>
 
-  const buttons = BUTTONS.map(({ color, bg }) => (
-    <div
-      onClick={() => setColor(color)}
-      className={'aspect-square w-[20px] rounded-sm cursor-pointer ' + bg}
-    ></div>
-  ));
+        <p>
+          For the backend, I can setup a simple static web server with{' '}
+          <TextSkillIcon skill="Nginx" /> or a more complex API with{' '}
+          <TextSkillIcon skill="NodeJs" /> and <TextSkillIcon skill="NestJs" />.
+        </p>
 
-  return <div className="flex flex-row gap-3 w-fit">{buttons}</div>;
+        <p>
+          To store data I may use relational databases like{' '}
+          <TextSkillIcon skill="Sqlite" /> or <TextSkillIcon skill="MySql" /> or
+          using document based database like <TextSkillIcon skill="MongoDB" />.
+        </p>
+
+        <p>
+          Once the application developed I containerize it with{' '}
+          <TextSkillIcon skill="Docker" /> to facilitate the deployment on the
+          production server.
+        </p>
+      </article>
+
+      <article className="w-full">
+        <h3 className="text-2xl font-bold">I am a System Developer</h3>
+
+        <p>
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris mattis
+          sapien placerat sagittis volutpat. Donec at metus condimentum, blandit
+          mi in, efficitur ante. Morbi cursus convallis metus, eget finibus
+          tellus pharetra id. Curabitur nisl libero, malesuada eu magna non,
+          condimentum euismod ante. Cras interdum volutpat enim. Fusce ac magna
+          eu orci blandit placerat. In sit amet cursus elit. Integer id nulla
+          est. Nam quis aliquet diam, vel laoreet quam. Nullam feugiat felis ut
+          nisl laoreet, at bibendum purus dignissim. Cras sodales ornare
+          aliquam.
+        </p>
+      </article>
+    </>
+  );
+}
+
+function ProfileSkill() {
+  interface SkillSection {
+    title: string;
+    skills: Skill[][];
+  }
+
+  const ICON_SIZE = 50;
+  const SKILLS: SkillSection[] = [
+    {
+      title: 'Systems programming',
+      skills: [['C', 'Cpp', 'Rust']],
+    },
+    {
+      title: 'Web Frontend',
+      skills: [
+        ['Html', 'Css', 'Javascript', 'Typescript'],
+        ['Vite', 'React', 'Tailwind'],
+      ],
+    },
+    {
+      title: 'Web Backend',
+      skills: [['Nginx', 'NodeJs', 'NestJs']],
+    },
+    {
+      title: 'Database',
+      skills: [['MySql', 'Sqlite', 'MongoDB']],
+    },
+    {
+      title: 'Tools',
+      skills: [['Git', 'Github', 'Docker', 'Postman', 'VsCode']],
+    },
+    {
+      title: 'Game Engine',
+      skills: [['Bevy', 'Unity']],
+    },
+    {
+      title: 'Misc.',
+      skills: [
+        ['Python', 'CSharp', 'Lua'],
+        ['Latex', 'Markdown', 'Regex', 'Arduino'],
+      ],
+    },
+  ];
+
+  const skillSections = SKILLS.map(({ title, skills }, i) => {
+    const skillIcons = skills.map((skills, i) => (
+      <div
+        key={i}
+        className="flex flex-wrap flex-row justify-center gap-3 mb-5 w-full"
+      >
+        {skills.map((skill, i) => (
+          <SkillIcon key={i} skill={skill} width={ICON_SIZE} />
+        ))}
+      </div>
+    ));
+
+    return (
+      <div
+        key={i}
+        className="border shadow-solid rounded-md px-5 pt-3"
+        style={{ flex: '1 auto' }}
+      >
+        <h3 className="text-center text-2xl mb-5 font-bold">{title}</h3>
+        {skillIcons}
+      </div>
+    );
+  });
+
+  return (
+    <Masonry
+      className="w-full"
+      columns={{ 640: 1, 768: 2, 1024: 3, 1280: 5 }}
+      gap={16}
+      columnProps={{ className: 'h-fit' }}
+    >
+      {skillSections}
+    </Masonry>
+  );
 }

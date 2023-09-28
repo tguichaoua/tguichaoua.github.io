@@ -8,14 +8,6 @@ body {
   @apply max-sm:text-sm text-base lg:text-lg;
 }
 
-body.red {
-  @apply bg-red-900;
-}
-
-body.green {
-  @apply bg-green-900;
-}
-
-body.blue {
-  @apply bg-blue-900;
+article p {
+  @apply mb-5;
 }
