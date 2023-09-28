@@ -9,19 +9,11 @@ export function App() {
       <header role="banner" className="text-center my-5">
         <CatRule className="mb-5" />
 
-        <h1 className="text-3xl sm:text-5xl lg:text-7xl">
-          <span color="red">Tristan Guichaoua</span>
-        </h1>
+        <h1 className="text-3xl sm:text-5xl lg:text-7xl">Tristan Guichaoua</h1>
         <div className="flex flex-row flex-wrap items-center justify-center gap-6 mx-auto mt-5 text-base sm:text-xl lg:text-3xl">
-          <span>
-            <span color="blue">Developer</span>
-          </span>
-          <span>
-            <span color="blue">Engineer</span>
-          </span>
-          <span>
-            <span color="blue">Rustacean</span>
-          </span>
+          <span>Developer</span>
+          <span>Engineer</span>
+          <span>Rustacean</span>
         </div>
 
         <div className="flex flex-row items-center justify-center gap-3 text-4xl mt-6">
@@ -118,4 +110,30 @@ export function App() {
       </footer>
     </>
   );
+}
+
+function ColorSelector() {
+  const BUTTONS = [
+    { color: 'red', bg: 'bg-red-500' },
+    { color: 'green', bg: 'bg-green-500' },
+    { color: 'blue', bg: 'bg-blue-500' },
+  ] as const;
+
+  const COLORS = BUTTONS.map((b) => b.color);
+
+  type Color = (typeof COLORS)[number];
+
+  const setColor = (color: Color) => {
+    document.body.classList.remove(...COLORS);
+    document.body.classList.add(color);
+  };
+
+  const buttons = BUTTONS.map(({ color, bg }) => (
+    <div
+      onClick={() => setColor(color)}
+      className={'aspect-square w-[20px] rounded-sm cursor-pointer ' + bg}
+    ></div>
+  ));
+
+  return <div className="flex flex-row gap-3 w-fit">{buttons}</div>;
 }
