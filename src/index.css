@@ -1,6 +1,13 @@
+@import './styles/button-3d.css';
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+:root {
+  --btn-3d-color: var(--color-slate-200);
+  --btn-3d-bg-color: var(--color-slate-900);
+}
 
 body {
   @apply bg-gray-900;

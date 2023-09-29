@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react';
 import { FaGithubSquare, FaLinkedin } from 'react-icons/fa';
+import { Outlet } from 'react-router-dom';
 
 import { CatRule } from '../components/cat-rule';
 import { Box } from '../components/box';
@@ -7,7 +8,7 @@ import {
   TextSkillIconContext,
   TextSkillIconMode,
 } from '../components/skill-icons';
-import { Link, Outlet } from 'react-router-dom';
+import { Nav } from '../components/nav';
 
 export function Root() {
   const [skillIconMode, setSkillIconMode] = useState<TextSkillIconMode>('icon');
@@ -53,16 +54,12 @@ export function Root() {
         <CatRule className="mt-5" />
       </header>
 
-      <nav className="flex flex-row justify-center gap-3">
-        <Link to="">
-          <div className="px-3 py-1 shadow-solid border rounded-md">
-            About Me
-          </div>
-        </Link>
-        <Link to="skills">
-          <div className="px-3 py-1 shadow-solid border rounded-md">Skills</div>
-        </Link>
-      </nav>
+      <Nav
+        links={[
+          { to: '', text: 'About me' },
+          { to: 'skills', text: 'Skills' },
+        ]}
+      />
 
       <Box theme="warn" className="my-7 text-center w-fit mx-auto">
         <h2 className="text-yellow-500 dark:text-yellow-300">
@@ -70,12 +67,6 @@ export function Root() {
         </h2>
         <p>This website is still under construction</p>
       </Box>
-
-      {/* <main className="flex flex-col items-center w-[80%] mx-auto gap-5">
-        <TextSkillIconContext.Provider value={skillIconMode}>
-          {profile === 'skill' ? <ProfileSkill /> : <ProfileFull />}
-       
-      </main> */}
 
       <TextSkillIconContext.Provider value={skillIconMode}>
         <Outlet />

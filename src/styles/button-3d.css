@@ -1,0 +1,21 @@
+.btn-3d {
+  border-width: 1px;
+  box-shadow: 2px 2px;
+
+  color: var(--btn-3d-color);
+  background-color: var(--btn-3d-bg-color);
+}
+
+.btn-3d:hover,
+.btn-3d.active {
+  position: relative;
+  left: 2px;
+  top: 2px;
+
+  box-shadow: 0px 0px;
+}
+
+.btn-3d.active {
+  background-color: var(--btn-3d-color);
+  color: var(--btn-3d-bg-color);
+}
