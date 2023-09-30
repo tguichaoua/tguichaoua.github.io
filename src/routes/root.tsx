@@ -1,4 +1,5 @@
 import { FaGithubSquare, FaLinkedin } from 'react-icons/fa';
+import { SiKofi } from 'react-icons/si';
 import { Outlet } from 'react-router-dom';
 
 import { CatRule } from '../components/cat-rule';
@@ -32,6 +33,9 @@ export function Root() {
             target="_blank"
           >
             <FaLinkedin />
+          </a>
+          <a href="https://ko-fi.com/tguichaoua" target="_blank">
+            <SiKofi />
           </a>
         </div>
 
