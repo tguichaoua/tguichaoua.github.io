@@ -8,6 +8,7 @@ import './styles.ts';
 import { Root } from './routes/root.tsx';
 import { AboutMe } from './routes/about-me.tsx';
 import { Skills } from './routes/skills.tsx';
+import { Projects } from './routes/projects.tsx';
 
 const router = createHashRouter([
   {
@@ -21,6 +22,10 @@ const router = createHashRouter([
       {
         path: 'skills',
         element: <Skills />,
+      },
+      {
+        path: 'projects',
+        element: <Projects />,
       },
     ],
   },
