@@ -32,8 +32,16 @@ export function TextSkillIcon(props: TextSkillIconProps) {
   if (mode_ === 'icon') {
     return <SkillIcon skill={skill} width={30} className="inline" />;
   } else {
-    const { name } = SKILLS[skill];
-    return <span>{name}</span>;
+    const { name, mainColor } = SKILLS[skill];
+    return (
+      <span
+        style={{
+          color: `#${mainColor}`,
+        }}
+      >
+        {name}
+      </span>
+    );
   }
 }
 
@@ -41,10 +49,11 @@ export function TextSkillIcon(props: TextSkillIconProps) {
 interface SkillInfo {
   name: string;
   src: string;
+  mainColor: string;
 }
 
-function skill(name: string, src: string): SkillInfo {
-  return { name, src };
+function skill(name: string, src: string, mainColor: string): SkillInfo {
+  return { name, src, mainColor };
 }
 
 import Arduino from '../assets/skill-icons/Arduino.svg';
@@ -79,34 +88,34 @@ import Vite from '../assets/skill-icons/Vite-Dark.svg';
 import VsCode from '../assets/skill-icons/VSCode-Dark.svg';
 
 const SKILLS = {
-  Arduino: skill('Arduino', Arduino),
-  Bevy: skill('Bevy', Bevy),
-  C: skill('C', C),
-  Cpp: skill('Cpp', Cpp),
-  CSharp: skill('CSharp', CSharp),
-  Css: skill('Css', Css),
-  Docker: skill('Docker', Docker),
-  Git: skill('Git', Git),
-  Github: skill('Github', Github),
-  Html: skill('Html', Html),
-  Javascript: skill('Javascript', Javascript),
-  Latex: skill('Latex', Latex),
-  Lua: skill('Lua', Lua),
-  Markdown: skill('Markdown', Markdown),
-  MongoDB: skill('MongoDB', MongoDB),
-  NestJs: skill('NestJs', NestJs),
-  Nginx: skill('Nginx', Nginx),
-  NodeJs: skill('NodeJs', NodeJs),
-  Postman: skill('Postman', Postman),
-  Python: skill('Python', Python),
-  React: skill('React', React),
-  Regex: skill('Regex', Regex),
-  Rust: skill('Rust', Rust),
-  MySql: skill('MySql', MySql),
-  Sqlite: skill('Sqlite', Sqlite),
-  Tailwind: skill('Tailwind', Tailwind),
-  Typescript: skill('Typescript', Typescript),
-  Unity: skill('Unity', Unity),
-  Vite: skill('Vite', Vite),
-  VsCode: skill('Visual Studio Code', VsCode),
+  Arduino: skill('Arduino', Arduino, '00979c'),
+  Bevy: skill('Bevy', Bevy, 'ececec'),
+  C: skill('C', C, '394aab'),
+  Cpp: skill('Cpp', Cpp, '00599c'),
+  CSharp: skill('CSharp', CSharp, '953cad'),
+  Css: skill('Css', Css, '0277bd'),
+  Docker: skill('Docker', Docker, '2396ed'),
+  Git: skill('Git', Git, 'f03c2e'),
+  Github: skill('Github', Github, '242938'),
+  Html: skill('Html', Html, 'e14e1d'),
+  Javascript: skill('Javascript', Javascript, 'f0db4f'),
+  Latex: skill('Latex', Latex, '008080'),
+  Lua: skill('Lua', Lua, '000080'),
+  Markdown: skill('Markdown', Markdown, 'ffffff'),
+  MongoDB: skill('MongoDB', MongoDB, '12924f'),
+  MySql: skill('MySql', MySql, 'c8c9cd'),
+  NestJs: skill('NestJs', NestJs, 'e0234e'),
+  Nginx: skill('Nginx', Nginx, '009639'),
+  NodeJs: skill('NodeJs', NodeJs, '81cd39'),
+  Postman: skill('Postman', Postman, 'ff6c37'),
+  Python: skill('Python', Python, '00b58c'), // color-mix(in lch, #376d9a, #ffd040);
+  React: skill('React', React, '00d8ff'),
+  Regex: skill('Regex', Regex, '3366cc'),
+  Rust: skill('Rust', Rust, 'e43717'),
+  Sqlite: skill('Sqlite', Sqlite, '8ad1f2'),
+  Tailwind: skill('Tailwind', Tailwind, '26b8bd'),
+  Typescript: skill('Typescript', Typescript, '007acc'),
+  Unity: skill('Unity', Unity, 'ffffff'),
+  Vite: skill('Vite', Vite, '9b5ffe'),
+  VsCode: skill('Visual Studio Code', VsCode, '3c99d4'),
 };
