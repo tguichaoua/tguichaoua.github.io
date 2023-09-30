@@ -1,32 +1,11 @@
-import { useEffect, useState } from 'react';
 import { FaGithubSquare, FaLinkedin } from 'react-icons/fa';
 import { Outlet } from 'react-router-dom';
 
 import { CatRule } from '../components/cat-rule';
 import { Box } from '../components/box';
-import {
-  TextSkillIconContext,
-  TextSkillIconMode,
-} from '../components/skill-icons';
 import { Nav } from '../components/nav';
 
 export function Root() {
-  const [skillIconMode, setSkillIconMode] = useState<TextSkillIconMode>('icon');
-
-  useEffect(() => {
-    function onKeypress(ev: KeyboardEvent) {
-      if (ev.key === 'o') {
-        setSkillIconMode((prev) => (prev === 'icon' ? 'text' : 'icon'));
-      }
-    }
-
-    document.addEventListener('keypress', onKeypress);
-
-    return () => {
-      document.removeEventListener('keypress', onKeypress);
-    };
-  }, []);
-
   return (
     <>
       <header role="banner" className="text-center my-5">
@@ -68,9 +47,7 @@ export function Root() {
         <p>This website is still under construction</p>
       </Box>
 
-      <TextSkillIconContext.Provider value={skillIconMode}>
-        <Outlet />
-      </TextSkillIconContext.Provider>
+      <Outlet />
 
       <footer className="px-5 py-2 mt-[50px] text-xs sm:text-sm border-t-2 border-t-gray-700 dark:border-t-gray-200">
         <svg
