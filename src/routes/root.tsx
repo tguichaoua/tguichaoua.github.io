@@ -3,7 +3,6 @@ import { SiKofi } from 'react-icons/si';
 import { Outlet } from 'react-router-dom';
 
 import { CatRule } from '../components/cat-rule';
-import { Box } from '../components/box';
 import { Nav } from '../components/nav';
 
 export function Root() {
@@ -43,18 +42,12 @@ export function Root() {
       </header>
 
       <Nav
+        className="mb-7"
         links={[
           { to: '', text: 'About me' },
           { to: 'skills', text: 'Skills' },
         ]}
       />
-
-      <Box theme="warn" className="my-7 text-center w-fit mx-auto">
-        <h2 className="text-yellow-500 dark:text-yellow-300">
-          /!\ Work in progress /!\
-        </h2>
-        <p>This website is still under construction</p>
-      </Box>
 
       <Outlet />
 
