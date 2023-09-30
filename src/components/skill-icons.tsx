@@ -31,7 +31,6 @@ export function TextSkillIcon(props: TextSkillIconProps) {
   const mode_ = mode ?? useContext(TextSkillIconContext);
   if (mode_ === 'icon') {
     return <SkillIcon skill={skill} width={30} className="inline" />;
-    skill;
   } else {
     const { name } = SKILLS[skill];
     return <span>{name}</span>;
