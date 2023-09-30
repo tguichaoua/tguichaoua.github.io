@@ -3,6 +3,7 @@ import ReactDOM from 'react-dom/client';
 import { RouterProvider, createHashRouter } from 'react-router-dom';
 
 import './index.css';
+import './styles.ts';
 
 import { Root } from './routes/root.tsx';
 import { AboutMe } from './routes/about-me.tsx';
