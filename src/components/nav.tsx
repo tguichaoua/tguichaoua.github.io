@@ -22,7 +22,7 @@ export function Nav(props: NavProps) {
         'rounded-md px-3 py-1 btn-3d ' + (isActive ? 'active' : '')
       }
     >
-      {text}
+      <span>{text}</span>
     </NavLink>
   ));
 
