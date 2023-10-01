@@ -1,9 +1,14 @@
 @import './styles/button-3d.css';
+@import './styles/fonts.css';
 @import './styles/funky.css';
+
+/* -------------------------------------------------------------------------- */
 
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+/* -------------------------------------------------------------------------- */
 
 body {
   @apply bg-gray-800;

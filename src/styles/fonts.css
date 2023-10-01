@@ -1,0 +1,18 @@
+@font-face {
+  font-family: 'ARB';
+  src: url('../assets/fonts/ARB 85 Poster Script JAN-39 FRE.ttf')
+    format('truetype');
+  font-weight: 100;
+  size-adjust: 90%;
+}
+
+@font-face {
+  font-family: 'CloisterBlack';
+  src: url('../assets/fonts/CloisterBlack.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: 'terminator';
+  src: url('../assets/fonts/terminator real nfi.ttf') format('truetype');
+  size-adjust: 70%;
+}
