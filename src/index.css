@@ -6,7 +6,7 @@
 @tailwind utilities;
 
 body {
-  @apply bg-gray-900;
+  @apply bg-gray-800;
   @apply text-slate-200;
   @apply max-sm:text-sm text-base lg:text-lg;
 }
