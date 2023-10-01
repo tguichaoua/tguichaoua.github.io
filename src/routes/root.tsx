@@ -16,7 +16,7 @@ export function Root() {
       <header role="banner" className="text-center my-5">
         <CatRule className="mb-5" />
 
-        <h1 className="text-3xl sm:text-5xl lg:text-7xl">Tristan Guichaoua</h1>
+        <h1 className="text-4xl sm:text-5xl lg:text-7xl">Tristan Guichaoua</h1>
         <div className="flex flex-row flex-wrap items-center justify-center gap-6 mx-auto mt-5 text-base sm:text-xl lg:text-3xl">
           <span>Developer</span>
           <span>Engineer</span>
