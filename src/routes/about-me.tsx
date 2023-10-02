@@ -103,7 +103,7 @@ export function AboutMe() {
             <p>
               To store data, I may use relational databases like{' '}
               <TextSkillIcon skill="Sqlite" /> or{' '}
-              <TextSkillIcon skill="MySql" /> or using document-based database
+              <TextSkillIcon skill="MySql" /> or use document-based databases
               like <TextSkillIcon skill="MongoDB" />.
             </p>
 
