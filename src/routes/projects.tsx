@@ -7,7 +7,7 @@ export function Projects() {
     <main className="w-[80%] mx-auto">
       <Masonry
         className="w-full"
-        columns={{ 640: 1, 768: 2, 1024: 3, 1280: 5 }}
+        columns={{ 640: 1, 768: 2, 1024: 3 }}
         gap={16}
         columnProps={{ className: 'h-fit' }}
       >
