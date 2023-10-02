@@ -104,9 +104,9 @@ const SKILLS = {
   Markdown: skill('Markdown', Markdown, 'ffffff'),
   MongoDB: skill('MongoDB', MongoDB, '12924f'),
   MySql: skill('MySQL', MySql, 'c8c9cd'),
-  NestJs: skill('NestJs', NestJs, 'e0234e'),
+  NestJs: skill('NestJS', NestJs, 'e0234e'),
   Nginx: skill('Nginx', Nginx, '009639'),
-  NodeJs: skill('NodeJs', NodeJs, '81cd39'),
+  NodeJs: skill('Node.js', NodeJs, '81cd39'),
   Postman: skill('Postman', Postman, 'ff6c37'),
   Python: skill('Python', Python, '00b58c'), // color-mix(in lch, #376d9a, #ffd040);
   React: skill('React', React, '00d8ff'),
