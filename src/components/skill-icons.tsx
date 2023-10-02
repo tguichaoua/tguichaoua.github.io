@@ -30,7 +30,7 @@ export function TextSkillIcon(props: TextSkillIconProps) {
   const { skill, mode } = props;
   const mode_ = mode ?? useContext(TextSkillIconContext);
   if (mode_ === 'icon') {
-    return <SkillIcon skill={skill} width={30} className="inline" />;
+    return <SkillIcon skill={skill} width={20} className="inline" />;
   } else {
     const { name, mainColor } = SKILLS[skill];
     return (
