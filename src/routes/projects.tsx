@@ -12,6 +12,21 @@ export function Projects() {
         columnProps={{ className: 'h-fit' }}
       >
         <ProjectSection
+          title="Portfolio Website"
+          description="This is the website you're currently looking at. It is build with Vite + React and hosted with Github page."
+          skills={[
+            'Html',
+            'Css',
+            'Javascript',
+            'Typescript',
+            'Vite',
+            'React',
+            'Tailwind',
+            'Github',
+          ]}
+          repositoryUrl="https://github.com/tguichaoua/tguichaoua.github.io"
+        />
+        <ProjectSection
           title="Promised Sqlite3"
           description="An async wrapper for the sqlite3 library."
           skills={['Javascript', 'Typescript']}
