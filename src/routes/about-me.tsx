@@ -55,9 +55,7 @@ export function AboutMe() {
 
       <TextSkillIconContext.Provider value={iconInTextMode ? 'text' : 'icon'}>
         <main className="flex flex-col items-center gap-5 ml-[max(10%,60px)] mr-[10%]">
-          <article className="w-full">
-            <h3 className="text-2xl font-bold">Who Am I ?</h3>
-
+          <Article title="Who Am I ?">
             <p>
               Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris
               mattis sapien placerat sagittis volutpat. Donec at metus
@@ -69,52 +67,48 @@ export function AboutMe() {
               laoreet quam. Nullam feugiat felis ut nisl laoreet, at bibendum
               purus dignissim. Cras sodales ornare aliquam.
             </p>
-          </article>
+          </Article>
 
-          <article className="w-full">
-            <h3 className="text-2xl font-bold">
-              I am a Fullstack Web Developer
-            </h3>
+          <Article title="I am a Full-stack Web Developer">
             <p>
-              Fullstack means I can work on both the frontend i.e. what the
-              client see (a web page or a web app) and the backend i.e. the
-              server that host the website.
+              <dfn>Full-stack</dfn> means I can work on both the frontend, i.e.,
+              what the client sees (a web page or a web app) and the backend,
+              i.e., the server that hosts the website.
             </p>
 
             <p>
               For the frontend I'm using the web trinity languages :{' '}
               <TextSkillIcon skill="Html" />, <TextSkillIcon skill="Css" /> and{' '}
-              <TextSkillIcon skill="Javascript" />. Actually I'm using more
+              <TextSkillIcon skill="Javascript" />. Actually, I'm using more
               powerful tools like <TextSkillIcon skill="Typescript" /> and{' '}
-              <TextSkillIcon skill="Vite" /> for the coding part,{' '}
+              <TextSkillIcon skill="Vite" /> to code,{' '}
               <TextSkillIcon skill="React" /> to create dynamic app and{' '}
               <TextSkillIcon skill="Tailwind" /> for the style.
             </p>
 
             <p>
-              For the backend, I can setup a simple static web server with{' '}
-              <TextSkillIcon skill="Nginx" /> or a more complex API with{' '}
-              <TextSkillIcon skill="NodeJs" /> and{' '}
-              <TextSkillIcon skill="NestJs" />.
+              For the backend, I'm using <TextSkillIcon skill="Nginx" /> for
+              static content or as reverse proxy and{' '}
+              <TextSkillIcon skill="NodeJs" /> with{' '}
+              <TextSkillIcon skill="NestJs" /> to build up{' '}
+              <abbr title="Application Programming Interface">API</abbr>s.
             </p>
 
             <p>
-              To store data I may use relational databases like{' '}
+              To store data, I may use relational databases like{' '}
               <TextSkillIcon skill="Sqlite" /> or{' '}
-              <TextSkillIcon skill="MySql" /> or using document based database
+              <TextSkillIcon skill="MySql" /> or using document-based database
               like <TextSkillIcon skill="MongoDB" />.
             </p>
 
             <p>
-              Once the application developed I containerize it with{' '}
-              <TextSkillIcon skill="Docker" /> to facilitate the deployment on
-              the production server.
+              Then I containerize the application with{' '}
+              <TextSkillIcon skill="Docker" /> to deploy it on the production
+              server.
             </p>
-          </article>
+          </Article>
 
-          <article className="w-full">
-            <h3 className="text-2xl font-bold">I am a System Developer</h3>
-
+          <Article title="I am a System Developer">
             <p>
               Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris
               mattis sapien placerat sagittis volutpat. Donec at metus
@@ -126,9 +120,25 @@ export function AboutMe() {
               laoreet quam. Nullam feugiat felis ut nisl laoreet, at bibendum
               purus dignissim. Cras sodales ornare aliquam.
             </p>
-          </article>
+          </Article>
         </main>
       </TextSkillIconContext.Provider>
     </>
+  );
+}
+
+interface ArticleProps {
+  title: string;
+  children: React.ReactNode;
+}
+
+function Article(props: ArticleProps) {
+  const { title, children } = props;
+
+  return (
+    <article className="w-full">
+      <h3 className="text-2xl font-bold mb-3">{title}</h3>
+      {children}
+    </article>
   );
 }
