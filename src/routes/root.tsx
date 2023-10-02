@@ -69,13 +69,18 @@ export function Root() {
 
       <Outlet />
 
-      <footer className="px-5 py-2 mt-[50px] text-xs sm:text-sm border-t-2 border-t-gray-700 dark:border-t-gray-200">
+      <footer className="px-5 py-2 mt-[100px] text-xs sm:text-sm border-t-2 border-t-gray-700 dark:border-t-gray-200">
         <div className="absolute translate-y-[calc(-100%-9px)]">
           <TinyGuy
             width={32}
             height={32}
             onDoubleClick={onTinyGuyDoubleClick}
           />
+        </div>
+        <div className="absolute translate-y-[calc(-100%-45px)] translate-x-[30px] max-w-[30%]">
+          <div className="px-3 py-2 border rounded-r-xl rounded-tl-xl bg-slate-900 shadow-solid">
+            Bonjour !
+          </div>
         </div>
         © 2023 Tristan Guichaoua
       </footer>
