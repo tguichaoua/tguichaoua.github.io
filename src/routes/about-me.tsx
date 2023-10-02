@@ -77,7 +77,7 @@ export function AboutMe() {
             </p>
 
             <p>
-              For the frontend I'm using the web trinity languages :{' '}
+              For the frontend, I'm using the web trinity languages :{' '}
               <TextSkillIcon skill="Html" />, <TextSkillIcon skill="Css" /> and{' '}
               <TextSkillIcon skill="Javascript" />. Actually, I'm using more
               powerful tools like <TextSkillIcon skill="Typescript" /> and{' '}
@@ -88,8 +88,14 @@ export function AboutMe() {
 
             <p>
               For the backend, I'm using <TextSkillIcon skill="Nginx" /> for
-              static content or as reverse proxy and{' '}
-              <TextSkillIcon skill="NodeJs" /> with{' '}
+              static content or as{' '}
+              <span
+                className="decoration-dotted underline"
+                title="A way to dispatch incoming requests to different servers."
+              >
+                reverse proxy
+              </span>{' '}
+              and <TextSkillIcon skill="NodeJs" /> with{' '}
               <TextSkillIcon skill="NestJs" /> to build up{' '}
               <abbr title="Application Programming Interface">API</abbr>s.
             </p>
