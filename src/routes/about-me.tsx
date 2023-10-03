@@ -116,15 +116,10 @@ export function AboutMe() {
 
           <Article title="I am a System Developer">
             <p>
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris
-              mattis sapien placerat sagittis volutpat. Donec at metus
-              condimentum, blandit mi in, efficitur ante. Morbi cursus convallis
-              metus, eget finibus tellus pharetra id. Curabitur nisl libero,
-              malesuada eu magna non, condimentum euismod ante. Cras interdum
-              volutpat enim. Fusce ac magna eu orci blandit placerat. In sit
-              amet cursus elit. Integer id nulla est. Nam quis aliquet diam, vel
-              laoreet quam. Nullam feugiat felis ut nisl laoreet, at bibendum
-              purus dignissim. Cras sodales ornare aliquam.
+              As a system developer, I'm familiar with the low-level languages{' '}
+              <TextSkillIcon skill="C" />, <TextSkillIcon skill="Cpp" /> and{' '}
+              <TextSkillIcon skill="Rust" /> for embedded development with{' '}
+              <TextSkillIcon skill="Arduino" />.
             </p>
           </Article>
         </main>
