@@ -1,3 +1,4 @@
+import { useRef } from 'react';
 import { FaGithubSquare, FaLinkedin } from 'react-icons/fa';
 import { SiKofi } from 'react-icons/si';
 import { Outlet } from 'react-router-dom';
@@ -5,6 +6,7 @@ import { Outlet } from 'react-router-dom';
 import { Nav } from '../components/nav';
 
 import TinyGuy from '../assets/tiny-guy.svg?react';
+import { Confetti } from '../components/confetti';
 
 export function Root() {
   const onTinyGuyDoubleClick = (event: React.MouseEvent) => {
@@ -12,8 +14,12 @@ export function Root() {
     document.body.classList.toggle('funky');
   };
 
+  const doConfetti = useRef<() => void>();
+
   return (
     <>
+      <Confetti burst={(burst) => (doConfetti.current = burst)} />
+
       <header role="banner" className="text-center pt-5 pb-[50px]">
         <div className="aaa">
           <h1 className="text-4xl sm:text-5xl lg:text-7xl text-neon font-neon">
@@ -24,7 +30,7 @@ export function Root() {
         <div className="flex flex-row flex-wrap items-center justify-center gap-6 mx-auto mt-5 text-base sm:text-xl lg:text-3xl">
           <span>Developer</span>
           <span>Engineer</span>
-          <span>Rustacean</span>
+          <span onClick={() => doConfetti.current?.()}>Rustacean</span>
         </div>
 
         <div className="flex flex-row items-center justify-center gap-3 text-4xl mt-6">

@@ -1,0 +1,15 @@
+.confetti {
+  position: absolute;
+  animation-name: confetti;
+  animation-timing-function: linear;
+  animation-duration: var(--duration);
+}
+
+@keyframes confetti {
+  0% {
+    transform: translate(calc(var(--x) - 100%), var(--y));
+  }
+  100% {
+    transform: translate(calc(var(--x) - 100%), 100vh) rotateZ(1800deg);
+  }
+}

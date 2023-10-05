@@ -31,7 +31,7 @@ export function AboutMe() {
 
   return (
     <>
-      <div className="sticky top-4 left-[15px] h-0 w-[calc(max(10%,60px)-30px)] z-50 flex flex-col gap-1 items-stretch">
+      <div className="sticky top-4 left-[15px] h-0 w-[calc(max(10%,60px)-30px)] z-10 flex flex-col gap-1 items-stretch">
         <div className="flex flex-row justify-between gap-1">
           <FaIcons />
           <IoTextOutline />
