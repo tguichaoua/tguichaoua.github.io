@@ -1,0 +1,49 @@
+.futuristic-box-wrapper {
+  filter: drop-shadow(4px 4px 0px var(--futuristic-box-border-color, black));
+}
+
+.futuristic-box-inner {
+  border-width: 1px;
+  border-color: var(--futuristic-box-border-color, black);
+  /* border-radius: 0.75rem; */
+
+  background-color: var(--futuristic-box-bg-color, white);
+
+  clip-path: polygon(
+    15px 0%,
+    100% 0%,
+    100% calc(100% - 30px),
+    calc(100% - 30px) 100%,
+    0% 100%,
+    0% 15px
+  );
+}
+
+.futuristic-box-inner.futuristic-box-no-header {
+  clip-path: polygon(
+    0% 0%,
+    100% 0%,
+    100% calc(100% - 30px),
+    calc(100% - 30px) 100%,
+    0% 100%,
+    0% 0%
+  );
+}
+
+.futuristic-box-header {
+  color: var(--futuristic-box-bg-color, white);
+  background-color: var(--futuristic-box-border-color, black);
+
+  width: fit-content;
+
+  padding-left: 10px;
+  padding-right: 15px;
+
+  clip-path: polygon(
+    0% 0%,
+    100% 0%,
+    100% calc(100% - 15px),
+    calc(100% - 15px) 100%,
+    0% 100%
+  );
+}
