@@ -6,6 +6,7 @@ import { IoTextOutline } from 'react-icons/io5';
 
 import { TextSkillIcon, TextSkillIconContext } from '../components/skill-icons';
 import { usePersistentState } from '../hooks/persistent-state';
+import { FuturisticBox } from '../components/futuristic-box';
 
 export function AboutMe() {
   const [iconInTextMode, setIconInTextMode] = usePersistentState(
@@ -30,7 +31,7 @@ export function AboutMe() {
 
   return (
     <>
-      <div className="sticky top-0 left-[15px] h-0 w-[calc(max(10%,60px)-30px)]">
+      <div className="sticky top-0 left-[15px] h-0 w-[calc(max(10%,60px)-30px)] z-50">
         <div className="relative top-4 flex flex-col gap-1 items-stretch ">
           <div className="flex flex-row justify-between gap-1">
             <FaIcons />
@@ -54,7 +55,7 @@ export function AboutMe() {
       </div>
 
       <TextSkillIconContext.Provider value={iconInTextMode ? 'text' : 'icon'}>
-        <main className="flex flex-col items-center gap-5 ml-[max(10%,60px)] mr-[10%]">
+        <main className="flex flex-col items-center gap-5 ml-[10%] mr-[10%]">
           <Article title="Who Am I ?">
             <p>
               Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris
@@ -69,7 +70,7 @@ export function AboutMe() {
             </p>
           </Article>
 
-          <Article title="I am a Full-stack Web Developer">
+          <Article title="A Full-stack Web Developer">
             <p>
               <dfn>Full-stack</dfn> means I can work on both the frontend, i.e.,
               what the client sees (a web page or a web app) and the backend,
@@ -114,7 +115,7 @@ export function AboutMe() {
             </p>
           </Article>
 
-          <Article title="I am a System Developer">
+          <Article title="A System Developer">
             <p>
               As a system developer, I'm familiar with the low-level languages{' '}
               <TextSkillIcon skill="C" />, <TextSkillIcon skill="Cpp" /> and{' '}
@@ -138,8 +139,14 @@ function Article(props: ArticleProps) {
 
   return (
     <article className="w-full">
-      <h3 className="text-2xl font-bold mb-3">{title}</h3>
-      {children}
+      <FuturisticBox
+        header={
+          <h3 className="text-2xl max-md:text-xl font-bold py-1">{title}</h3>
+        }
+        innerClassName="rounded-md"
+      >
+        {children}
+      </FuturisticBox>
     </article>
   );
 }

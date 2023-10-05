@@ -1,6 +1,7 @@
 import Masonry from 'react-layout-masonry';
-import { Skill, SkillIcon } from '../components/skill-icons';
 import { FaGithub } from 'react-icons/fa';
+import { Skill, SkillIcon } from '../components/skill-icons';
+import { FuturisticBox } from '../components/futuristic-box';
 
 export function Projects() {
   return (
@@ -64,10 +65,7 @@ function ProjectSection(props: ProjectSectionProps) {
   ));
 
   return (
-    <div
-      className="border shadow-solid rounded-md px-5 py-3"
-      style={{ flex: '1 auto' }}
-    >
+    <FuturisticBox innerClassName="rounded-md">
       <div className="absolute">
         <a href={repositoryUrl} target="_blank" className="relative top-[10px]">
           <FaGithub />
@@ -75,7 +73,9 @@ function ProjectSection(props: ProjectSectionProps) {
       </div>
       <h3 className="text-center text-2xl font-bold">{title}</h3>
       <p className="italic text-sm mt-3">{description}</p>
-      <div className="flex flex-row flex-wrap gap-1 mt-3">{skillIcons}</div>
-    </div>
+      <div className="flex flex-row flex-wrap gap-1 mt-3 mb-1">
+        {skillIcons}
+      </div>
+    </FuturisticBox>
   );
 }

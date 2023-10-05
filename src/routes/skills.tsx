@@ -1,5 +1,6 @@
 import Masonry from 'react-layout-masonry';
 import { Skill, SkillIcon } from '../components/skill-icons';
+import { FuturisticBox } from '../components/futuristic-box';
 
 export function Skills() {
   return (
@@ -66,12 +67,9 @@ function SkillSection(props: SkillSectionProps) {
   ));
 
   return (
-    <div
-      className="border shadow-solid rounded-md px-5 pt-3"
-      style={{ flex: '1 auto' }}
-    >
+    <FuturisticBox innerClassName="rounded-md">
       <h3 className="text-center text-2xl mb-5 font-bold">{title}</h3>
       {skillIcons}
-    </div>
+    </FuturisticBox>
   );
 }
