@@ -15,22 +15,8 @@ export function Root() {
   return (
     <>
       <header role="banner" className="text-center pt-5 pb-[50px]">
-        {/* <CatRule className="mb-5" /> */}
-
         <div className="aaa">
           <h1 className="text-4xl sm:text-5xl lg:text-7xl text-neon font-neon">
-            {/* <LokiText
-            className="tracking-widest "
-            delay={1000}
-            fonts={['CloisterBlack', 'ARB', 'terminator']}
-            colors={
-              // ['#F04358', '#FFD262', '#05D5AA', '#107FB1']
-              ['#219C90', '#468B97', '#EF6262', '#F3AA60']
-            }
-            onLetterTransformed={(elt) => elt.classList.add('text-neon')}
-          >
-            Tristan Guichaoua
-          </LokiText> */}
             Tristan Guichaoua
           </h1>
         </div>
@@ -55,8 +41,6 @@ export function Root() {
             <SiKofi />
           </a>
         </div>
-
-        {/* <CatRule className="mt-5" /> */}
       </header>
 
       <Nav
