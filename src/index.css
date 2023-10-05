@@ -1,6 +1,7 @@
 @import './styles/button-3d.css';
 @import './styles/fonts.css';
 @import './styles/funky.css';
+@import './styles/neon.css';
 
 /* -------------------------------------------------------------------------- */
 
@@ -26,8 +27,4 @@ body {
 article p {
   line-height: 1.5;
   @apply my-3;
-}
-
-.text-neon {
-  text-shadow: 0 0 5px currentColor;
 }

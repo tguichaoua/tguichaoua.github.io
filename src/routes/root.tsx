@@ -2,9 +2,7 @@ import { FaGithubSquare, FaLinkedin } from 'react-icons/fa';
 import { SiKofi } from 'react-icons/si';
 import { Outlet } from 'react-router-dom';
 
-import { CatRule } from '../components/cat-rule';
 import { Nav } from '../components/nav';
-import { LokiText } from '../components/loki-text';
 
 import TinyGuy from '../assets/tiny-guy.svg?react';
 
@@ -16,11 +14,12 @@ export function Root() {
 
   return (
     <>
-      <header role="banner" className="text-center my-5">
-        <CatRule className="mb-5" />
+      <header role="banner" className="text-center pt-5 pb-[50px]">
+        {/* <CatRule className="mb-5" /> */}
 
-        <h1 className="text-4xl sm:text-5xl lg:text-7xl">
-          <LokiText
+        <div className="aaa">
+          <h1 className="text-4xl sm:text-5xl lg:text-7xl text-neon font-neon">
+            {/* <LokiText
             className="tracking-widest "
             delay={1000}
             fonts={['CloisterBlack', 'ARB', 'terminator']}
@@ -31,8 +30,10 @@ export function Root() {
             onLetterTransformed={(elt) => elt.classList.add('text-neon')}
           >
             Tristan Guichaoua
-          </LokiText>
-        </h1>
+          </LokiText> */}
+            Tristan Guichaoua
+          </h1>
+        </div>
 
         <div className="flex flex-row flex-wrap items-center justify-center gap-6 mx-auto mt-5 text-base sm:text-xl lg:text-3xl">
           <span>Developer</span>
@@ -55,7 +56,7 @@ export function Root() {
           </a>
         </div>
 
-        <CatRule className="mt-5" />
+        {/* <CatRule className="mt-5" /> */}
       </header>
 
       <Nav
