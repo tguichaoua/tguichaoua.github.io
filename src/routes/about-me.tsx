@@ -31,26 +31,25 @@ export function AboutMe() {
 
   return (
     <>
-      <div className="sticky top-0 left-[15px] h-0 w-[calc(max(10%,60px)-30px)] z-50">
-        <div className="relative top-4 flex flex-col gap-1 items-stretch ">
-          <div className="flex flex-row justify-between gap-1">
-            <FaIcons />
-            <IoTextOutline />
-          </div>
-          <div className="flex">
-            <Switch
-              className="mx-auto"
-              checked={iconInTextMode}
-              onChange={setIconInTextMode}
-              handleDiameter={15}
-              uncheckedIcon={false}
-              checkedIcon={false}
-              onColor="#888"
-              offColor="#888"
-              height={15}
-              width={30}
-            />
-          </div>
+      <div className="sticky top-4 left-[15px] h-0 w-[calc(max(10%,60px)-30px)] z-50 flex flex-col gap-1 items-stretch">
+        <div className="flex flex-row justify-between gap-1">
+          <FaIcons />
+          <IoTextOutline />
+        </div>
+        {/* Okay, this is particulary tricky here */}
+        <div className="flex min-[1190px]:relative -top-[20px]">
+          <Switch
+            className="mx-auto"
+            checked={iconInTextMode}
+            onChange={setIconInTextMode}
+            handleDiameter={15}
+            uncheckedIcon={false}
+            checkedIcon={false}
+            onColor="#888"
+            offColor="#888"
+            height={15}
+            width={30}
+          />
         </div>
       </div>
 
