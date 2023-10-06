@@ -86,7 +86,7 @@ export function Root() {
         links={[
           { to: '', text: 'About me' },
           { to: 'skills', text: 'Skills' },
-          { to: 'projects', text: 'Projects' },
+          { to: 'portfolio', text: 'Portfolio' },
         ]}
       />
 

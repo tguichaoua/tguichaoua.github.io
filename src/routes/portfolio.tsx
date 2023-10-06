@@ -3,7 +3,7 @@ import { FaGithub } from 'react-icons/fa';
 import { Skill, SkillIcon } from '../components/skill-icons';
 import { FuturisticBox } from '../components/futuristic-box';
 
-export function Projects() {
+export function Portfolio() {
   return (
     <main className="w-[80%] mx-auto">
       <Masonry

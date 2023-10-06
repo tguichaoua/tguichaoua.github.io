@@ -65,7 +65,7 @@ export function AboutMe() {
             <p>
               You can check my projects in my{' '}
               <Link
-                to="projects"
+                to="portfolio"
                 className="font-bold text-neon-[3px] underline"
               >
                 portfolio
