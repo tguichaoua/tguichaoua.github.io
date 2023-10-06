@@ -9,6 +9,7 @@ import { usePersistentState } from '../hooks/persistent-state';
 
 import { TextSkillIcon, TextSkillIconContext } from '../components/skill-icons';
 import { FuturisticBox } from '../components/futuristic-box';
+import { ConfettiEvent } from '../components/confetti';
 
 export function AboutMe() {
   const [iconInTextMode, setIconInTextMode] = usePersistentState(
@@ -120,7 +121,13 @@ export function AboutMe() {
               <TextSkillIcon skill="C" />, <TextSkillIcon skill="Cpp" /> and{' '}
               <TextSkillIcon skill="Rust" />, though, I'm more familiar with the
               last one. So don't hesitate to ask me about Rust{' '}
-              <span className="font-emoji">🦀</span>.
+              <span
+                className="font-emoji cursor-pointer"
+                onClick={() => document.dispatchEvent(new ConfettiEvent())}
+              >
+                🦀
+              </span>
+              .
             </p>
             <p>
               I also have some knowledge about embedded with{' '}
