@@ -1,5 +1,4 @@
-.text-neon {
-  text-shadow: 0 0 5px currentColor;
+.text-neon-blink {
   animation: text-neon-blink 6s linear infinite;
   filter: brightness(100%);
 }

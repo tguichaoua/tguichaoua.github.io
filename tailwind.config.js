@@ -18,7 +18,7 @@ export default {
       },
     },
   },
-  plugins: [],
+  plugins: [require('./plugins/text-neon')],
 };
 
 // function colorVarsPlugin({ addBase, theme }) {

@@ -55,7 +55,7 @@ export function Root() {
       <Confetti burst={(burst) => (burstConfetti.current = burst)} />
 
       <header role="banner" className="text-center pt-5 pb-[50px]">
-        <h1 className="text-6xl sm:text-7xl lg:text-8xl text-neon font-neon">
+        <h1 className="text-6xl sm:text-7xl lg:text-8xl text-neon-[5px] text-neon-blink font-neon">
           Tristan Guichaoua
         </h1>
 
