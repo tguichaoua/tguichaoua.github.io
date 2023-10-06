@@ -1,3 +1,15 @@
+.confetti-wrapper {
+  position: fixed;
+  top: 0;
+  left: 0;
+
+  z-index: -30;
+
+  width: 100%;
+
+  user-select: none;
+}
+
 .confetti {
   position: absolute;
   animation-name: confetti;

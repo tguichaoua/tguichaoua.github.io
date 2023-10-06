@@ -30,10 +30,5 @@ export function Confetti(props: ConfettiProps) {
 
   burst?.(doBurst);
 
-  return (
-    <div
-      ref={container}
-      className="fixed top-0 left-0 -z-30 w-full select-none"
-    ></div>
-  );
+  return <div ref={container} className="confetti-wrapper"></div>;
 }
