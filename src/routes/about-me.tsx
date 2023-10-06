@@ -118,7 +118,12 @@ export function AboutMe() {
             <p>
               As a system developer, I'm familiar with the low-level languages{' '}
               <TextSkillIcon skill="C" />, <TextSkillIcon skill="Cpp" /> and{' '}
-              <TextSkillIcon skill="Rust" /> for embedded development with{' '}
+              <TextSkillIcon skill="Rust" />, though, I'm more familiar with the
+              last one. So don't hesitate to ask me about Rust{' '}
+              <span className="font-emoji">🦀</span>.
+            </p>
+            <p>
+              I also have some knowledge about embedded with{' '}
               <TextSkillIcon skill="Arduino" />.
             </p>
           </Article>
