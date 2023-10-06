@@ -4,9 +4,11 @@ import { SiKofi } from 'react-icons/si';
 import { Outlet } from 'react-router-dom';
 
 import { Nav } from '../components/nav';
+import { Confetti } from '../components/confetti';
+
+import { nextColor } from '../styles/color';
 
 import TinyGuy from '../assets/tiny-guy.svg?react';
-import { Confetti } from '../components/confetti';
 
 export function Root() {
   const [isParty, setIsParty] = useState(false);
@@ -31,6 +33,20 @@ export function Root() {
   useEffect(() => {
     return () => {
       clearInterval(confettiRainInterval.current);
+    };
+  }, []);
+
+  useEffect(() => {
+    function onKeypress(ev: KeyboardEvent) {
+      if (ev.key === 'p') {
+        nextColor();
+      }
+    }
+
+    document.addEventListener('keypress', onKeypress);
+
+    return () => {
+      document.removeEventListener('keypress', onKeypress);
     };
   }, []);
 
@@ -76,7 +92,7 @@ export function Root() {
 
       <Outlet />
 
-      <footer className="px-5 py-2 mt-[100px] text-xs sm:text-sm border-t-2 border-t-gray-700 dark:border-t-gray-200">
+      <footer className="px-5 py-2 mt-[100px] text-xs sm:text-sm border-t-2 border-current">
         <div className="absolute translate-y-[calc(-100%-9px)]">
           <TinyGuy
             ref={tinyGuy}
@@ -86,7 +102,7 @@ export function Root() {
           />
         </div>
         <div className="absolute translate-y-[calc(-100%-45px)] translate-x-[30px] max-w-[30%]">
-          <div className="px-3 py-2 border rounded-r-xl rounded-tl-xl bg-slate-900 shadow-solid">
+          <div className="px-3 py-2 border border-current rounded-r-xl rounded-tl-xl bg-slate-900 shadow-solid">
             Bonjour !
           </div>
         </div>

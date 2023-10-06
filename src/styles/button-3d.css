@@ -1,5 +1,6 @@
 .btn-3d {
   border-width: 1px;
+  border-color: currentColor;
   box-shadow: 2px 2px;
 }
 

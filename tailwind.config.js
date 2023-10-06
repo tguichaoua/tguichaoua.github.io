@@ -5,6 +5,10 @@ export default {
   content: ['./index.html', './src/**/*.{js,ts,jsx,tsx}'],
   theme: {
     extend: {
+      colors: {
+        front: 'rgb(var(--front-color) / <alpha-value>)',
+        back: 'rgb(var(--back-color) / <alpha-value>)',
+      },
       fontFamily: {
         sans: ['"Chakra Petch"', ...defaultTheme.fontFamily.sans],
         neon: 'Neonderthaw',
