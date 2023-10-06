@@ -39,13 +39,11 @@ export function Root() {
       <Confetti burst={(burst) => (burstConfetti.current = burst)} />
 
       <header role="banner" className="text-center pt-5 pb-[50px]">
-        <div className="aaa">
-          <h1 className="text-4xl sm:text-5xl lg:text-7xl text-neon font-neon">
-            Tristan Guichaoua
-          </h1>
-        </div>
+        <h1 className="text-6xl sm:text-7xl lg:text-8xl text-neon font-neon">
+          Tristan Guichaoua
+        </h1>
 
-        <div className="flex flex-row flex-wrap items-center justify-center gap-6 mx-auto mt-5 text-base sm:text-xl lg:text-3xl">
+        <div className="flex flex-row flex-wrap items-center justify-around w-[50%] max-w-[500px] min-w-[330px] mx-auto mt-10 text-xl md:text-2xl lg:text-3xl">
           <span>Developer</span>
           <span>Engineer</span>
           <span onClick={doConfetti}>Rustacean</span>
