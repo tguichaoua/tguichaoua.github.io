@@ -41,7 +41,19 @@ export function Projects() {
         />
         <ProjectSection
           title="Bevy Cursor"
-          description="A bevy plugin to track informations about the cursor."
+          description={
+            <>
+              A plugin for the{' '}
+              <a
+                href="https://bevyengine.org/"
+                target="_blank"
+                className="underline"
+              >
+                bevy game engine
+              </a>{' '}
+              that help to get information about the cursor.
+            </>
+          }
           skills={['Rust', 'Bevy']}
           repositoryUrl="https://github.com/tguichaoua/bevy_cursor"
         />
@@ -52,7 +64,7 @@ export function Projects() {
 
 interface ProjectSectionProps {
   title: string;
-  description: string;
+  description: React.ReactNode;
   skills: Skill[];
   repositoryUrl: string;
 }
