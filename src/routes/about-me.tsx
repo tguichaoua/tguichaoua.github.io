@@ -7,6 +7,7 @@ import { IoTextOutline } from 'react-icons/io5';
 import { TextSkillIcon, TextSkillIconContext } from '../components/skill-icons';
 import { usePersistentState } from '../hooks/persistent-state';
 import { FuturisticBox } from '../components/futuristic-box';
+import { Link } from 'react-router-dom';
 
 export function AboutMe() {
   const [iconInTextMode, setIconInTextMode] = usePersistentState(
@@ -57,15 +58,21 @@ export function AboutMe() {
         <main className="flex flex-col items-center gap-5 ml-[10%] mr-[10%]">
           <Article title="Who Am I ?">
             <p>
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris
-              mattis sapien placerat sagittis volutpat. Donec at metus
-              condimentum, blandit mi in, efficitur ante. Morbi cursus convallis
-              metus, eget finibus tellus pharetra id. Curabitur nisl libero,
-              malesuada eu magna non, condimentum euismod ante. Cras interdum
-              volutpat enim. Fusce ac magna eu orci blandit placerat. In sit
-              amet cursus elit. Integer id nulla est. Nam quis aliquet diam, vel
-              laoreet quam. Nullam feugiat felis ut nisl laoreet, at bibendum
-              purus dignissim. Cras sodales ornare aliquam.
+              My name's Tristan Guichaoua, I'm a French software engineer. My
+              interests are programming (yes, I know, it's so cliché for a tech
+              guy), video games and board games.
+            </p>
+            <p>
+              You can check my projects in my{' '}
+              <Link
+                to="projects"
+                className="font-bold text-neon-[3px] underline"
+              >
+                portfolio
+              </Link>
+              , most of them are not visual, so, there is nothing to see, but if
+              you're a fellow programmer you may find interesting to explore the
+              source code <span className="font-emoji">😉</span>.
             </p>
           </Article>
 
