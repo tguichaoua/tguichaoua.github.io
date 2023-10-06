@@ -1,7 +1,10 @@
 import { useEffect, useRef, useState } from 'react';
+import { Outlet } from 'react-router-dom';
+
 import { FaGithubSquare, FaLinkedin } from 'react-icons/fa';
 import { SiKofi } from 'react-icons/si';
-import { Outlet } from 'react-router-dom';
+
+import { useDocumentEvent } from '../hooks/document-event';
 
 import { Nav } from '../components/nav';
 import { Confetti } from '../components/confetti';
@@ -36,19 +39,11 @@ export function Root() {
     };
   }, []);
 
-  useEffect(() => {
-    function onKeypress(ev: KeyboardEvent) {
-      if (ev.key === 'p') {
-        nextColor();
-      }
+  useDocumentEvent('keypress', (ev) => {
+    if (ev.key === 'p') {
+      nextColor();
     }
-
-    document.addEventListener('keypress', onKeypress);
-
-    return () => {
-      document.removeEventListener('keypress', onKeypress);
-    };
-  }, []);
+  });
 
   return (
     <>

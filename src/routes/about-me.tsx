@@ -1,13 +1,14 @@
-import { useEffect } from 'react';
+import { Link } from 'react-router-dom';
 import Switch from 'react-switch';
 
 import { FaIcons } from 'react-icons/fa';
 import { IoTextOutline } from 'react-icons/io5';
 
-import { TextSkillIcon, TextSkillIconContext } from '../components/skill-icons';
+import { useDocumentEvent } from '../hooks/document-event';
 import { usePersistentState } from '../hooks/persistent-state';
+
+import { TextSkillIcon, TextSkillIconContext } from '../components/skill-icons';
 import { FuturisticBox } from '../components/futuristic-box';
-import { Link } from 'react-router-dom';
 
 export function AboutMe() {
   const [iconInTextMode, setIconInTextMode] = usePersistentState(
@@ -16,19 +17,11 @@ export function AboutMe() {
     (x): x is boolean => typeof x === 'boolean'
   );
 
-  useEffect(() => {
-    function onKeypress(ev: KeyboardEvent) {
-      if (ev.key === 'o') {
-        setIconInTextMode((prev) => !prev);
-      }
+  useDocumentEvent('keypress', (ev) => {
+    if (ev.key === 'o') {
+      setIconInTextMode((prev) => !prev);
     }
-
-    document.addEventListener('keypress', onKeypress);
-
-    return () => {
-      document.removeEventListener('keypress', onKeypress);
-    };
-  }, []);
+  });
 
   return (
     <>
