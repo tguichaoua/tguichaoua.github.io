@@ -12,7 +12,7 @@ export function Root() {
   const [isParty, setIsParty] = useState(false);
   const tinyGuy = useRef<SVGSVGElement>(null);
   const burstConfetti = useRef<() => void>();
-  const confettiRainHandler = useRef(0);
+  const confettiRainInterval = useRef(0);
 
   const doConfetti = () => burstConfetti.current?.();
 
@@ -20,17 +20,17 @@ export function Root() {
     if (isParty) {
       tinyGuy.current?.classList.add('dance');
       document.body.classList.add('funky');
-      confettiRainHandler.current = setInterval(doConfetti, 500);
+      confettiRainInterval.current = setInterval(doConfetti, 500);
     } else {
       tinyGuy.current?.classList.remove('dance');
       document.body.classList.remove('funky');
-      clearInterval(confettiRainHandler.current);
+      clearInterval(confettiRainInterval.current);
     }
   }, [isParty]);
 
   useEffect(() => {
     return () => {
-      clearInterval(confettiRainHandler.current);
+      clearInterval(confettiRainInterval.current);
     };
   }, []);
 
