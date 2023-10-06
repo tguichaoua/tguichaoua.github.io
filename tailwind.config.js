@@ -11,6 +11,7 @@ export default {
       },
       fontFamily: {
         sans: ['"Chakra Petch"', ...defaultTheme.fontFamily.sans],
+        emoji: ['"Noto Emoji"'],
         neon: 'Neonderthaw',
       },
       boxShadow: {
