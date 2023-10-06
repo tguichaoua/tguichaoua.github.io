@@ -1,17 +1,23 @@
+const defaultTheme = require('tailwindcss/defaultTheme');
+
 /** @type {import('tailwindcss').Config} */
-module.exports = {
-  content: ["./src/**/*.{html,js,ts,jsx,tsx}"],
+export default {
+  content: ['./index.html', './src/**/*.{js,ts,jsx,tsx}'],
   theme: {
     extend: {
+      colors: {
+        front: 'rgb(var(--front-color) / <alpha-value>)',
+        back: 'rgb(var(--back-color) / <alpha-value>)',
+      },
       fontFamily: {
-        roboto: ["Roboto", "cursive"],
-        "rubik-glitch": ['"Rubik Glitch"', "cursive"],
-        "press-start": ['"Press Start 2P"', "cursive"],
-        silkscreen: ["Silkscreen", "cursive"],
-        alkatra: ["Alkatra", "cursive"],
-        "gajraj-one": ['"Gajraj One"', "cursive"],
+        sans: ['"Chakra Petch"', ...defaultTheme.fontFamily.sans],
+        emoji: ['"Noto Emoji"'],
+        neon: 'Neonderthaw',
+      },
+      boxShadow: {
+        solid: '4px 4px',
       },
     },
   },
-  plugins: [],
+  plugins: [require('./plugins/text-neon')],
 };

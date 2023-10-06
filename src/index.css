@@ -1,0 +1,33 @@
+@import './styles/button-3d.css';
+@import './styles/fonts.css';
+@import './styles/funky.css';
+@import './styles/neon.css';
+
+/* -------------------------------------------------------------------------- */
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* -------------------------------------------------------------------------- */
+
+:root {
+  --front-color: 226 232 240; /* slate-200 */
+  --back-color: 17 24 39; /* gray-900 */
+
+  --futuristic-box-border-color: rgb(var(--front-color));
+  --futuristic-box-bg-color: rgb(var(--back-color));
+}
+
+body {
+  @apply bg-back;
+  @apply text-front;
+  @apply max-sm:text-sm text-base lg:text-lg;
+}
+
+/* -------------------------------------------------------------------------- */
+
+article p {
+  line-height: 1.5;
+  @apply my-3;
+}
