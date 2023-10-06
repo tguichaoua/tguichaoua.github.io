@@ -7,7 +7,7 @@ import { SiKofi } from 'react-icons/si';
 import { useDocumentEvent } from '../hooks/document-event';
 
 import { Nav } from '../components/nav';
-import { Confetti } from '../components/confetti';
+import { Confetti, ConfettiEvent } from '../components/confetti';
 
 import { nextColor } from '../styles/color';
 
@@ -16,10 +16,9 @@ import TinyGuy from '../assets/tiny-guy.svg?react';
 export function Root() {
   const [isParty, setIsParty] = useState(false);
   const tinyGuy = useRef<SVGSVGElement>(null);
-  const burstConfetti = useRef<() => void>();
   const confettiRainInterval = useRef(0);
 
-  const doConfetti = () => burstConfetti.current?.();
+  const doConfetti = () => document.dispatchEvent(new ConfettiEvent());
 
   useEffect(() => {
     if (isParty) {
@@ -47,7 +46,7 @@ export function Root() {
 
   return (
     <>
-      <Confetti burst={(burst) => (burstConfetti.current = burst)} />
+      <Confetti content="🦀" />
 
       <header role="banner" className="text-center pt-5 pb-[50px]">
         <h1 className="text-6xl sm:text-7xl lg:text-8xl text-neon-[5px] text-neon-blink font-neon">
