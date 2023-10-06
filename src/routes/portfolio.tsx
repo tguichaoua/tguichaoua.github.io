@@ -1,5 +1,7 @@
 import Masonry from 'react-layout-masonry';
+
 import { FaGithub } from 'react-icons/fa';
+
 import { Skill, SkillIcon } from '../components/skill-icons';
 import { FuturisticBox } from '../components/futuristic-box';
 

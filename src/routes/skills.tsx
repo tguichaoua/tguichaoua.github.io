@@ -1,4 +1,5 @@
 import Masonry from 'react-layout-masonry';
+
 import { Skill, SkillIcon } from '../components/skill-icons';
 import { FuturisticBox } from '../components/futuristic-box';
 
