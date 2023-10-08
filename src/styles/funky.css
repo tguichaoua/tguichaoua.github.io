@@ -1,3 +1,9 @@
+@property --hue {
+  syntax: '<number>';
+  inherits: false;
+  initial-value: 0;
+}
+
 .funky {
   background-color: hsl(var(--hue), 20%, 40%);
   animation: funky 1s linear infinite;
