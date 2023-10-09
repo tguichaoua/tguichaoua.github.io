@@ -35,6 +35,7 @@ export function TextSkillIcon(props: TextSkillIconProps) {
     const { name, mainColor } = SKILLS[skill];
     return (
       <span
+        className="skill-icon-text"
         style={{
           color: `#${mainColor}`,
         }}

@@ -11,6 +11,8 @@ import { TextSkillIcon, TextSkillIconContext } from '../components/skill-icons';
 import { FuturisticBox, FuturisticHeader } from '../components/futuristic-box';
 import { ConfettiEvent } from '../components/confetti';
 
+import './about-me.css';
+
 export function AboutMe() {
   const [iconInTextMode, setIconInTextMode] = usePersistentState(
     'ICON_MODE',
@@ -27,7 +29,10 @@ export function AboutMe() {
   return (
     <>
       <TextSkillIconContext.Provider value={iconInTextMode ? 'text' : 'icon'}>
-        <main className="flex flex-col items-center gap-5 ml-[10%] mr-[10%]">
+        <main
+          id="about-me"
+          className="flex flex-col items-center gap-5 ml-[10%] mr-[10%]"
+        >
           <Article title="Who Am I ?">
             <p>
               My name's Tristan Guichaoua, I'm a French software engineer. My

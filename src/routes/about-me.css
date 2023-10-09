@@ -1,0 +1,3 @@
+#about-me .skill-icon-text {
+  @apply text-neon-[3px];
+}
