@@ -164,8 +164,10 @@ function IconSwitch(props: IconSwitchProps) {
   const { checked, onChange } = props;
 
   return (
-    <div className="absolute top-4 right-4 z-10 flex flex-row gap-1 items-stretch">
-      <FaIcons />
+    <div className="absolute top-4 right-4 z-10 flex flex-row gap-2 items-stretch">
+      <span onClick={() => onChange(false)}>
+        <FaIcons />
+      </span>
       <Switch
         className="mx-auto"
         checked={checked}
@@ -178,7 +180,9 @@ function IconSwitch(props: IconSwitchProps) {
         height={15}
         width={30}
       />
-      <IoTextOutline />
+      <span onClick={() => onChange(true)}>
+        <IoTextOutline />
+      </span>
     </div>
   );
 }
