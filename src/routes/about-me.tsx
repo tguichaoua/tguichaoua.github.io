@@ -8,7 +8,7 @@ import { useDocumentEvent } from '../hooks/document-event';
 import { usePersistentState } from '../hooks/persistent-state';
 
 import { TextSkillIcon, TextSkillIconContext } from '../components/skill-icons';
-import { FuturisticBox } from '../components/futuristic-box';
+import { FuturisticBox, FuturisticHeader } from '../components/futuristic-box';
 import { ConfettiEvent } from '../components/confetti';
 
 export function AboutMe() {
@@ -26,28 +26,6 @@ export function AboutMe() {
 
   return (
     <>
-      <div className="sticky top-4 left-[15px] h-0 w-[calc(max(10%,60px)-30px)] z-10 flex flex-col gap-1 items-stretch">
-        <div className="flex flex-row justify-between gap-1">
-          <FaIcons />
-          <IoTextOutline />
-        </div>
-        {/* Okay, this is particulary tricky here */}
-        <div className="flex min-[1190px]:relative -top-[20px]">
-          <Switch
-            className="mx-auto"
-            checked={iconInTextMode}
-            onChange={setIconInTextMode}
-            handleDiameter={15}
-            uncheckedIcon={false}
-            checkedIcon={false}
-            onColor="#888"
-            offColor="#888"
-            height={15}
-            width={30}
-          />
-        </div>
-      </div>
-
       <TextSkillIconContext.Provider value={iconInTextMode ? 'text' : 'icon'}>
         <main className="flex flex-col items-center gap-5 ml-[10%] mr-[10%]">
           <Article title="Who Am I ?">
@@ -70,7 +48,11 @@ export function AboutMe() {
             </p>
           </Article>
 
-          <Article title="A Full-stack Web Developer">
+          <Article
+            title="A Full-stack Web Developer"
+            iconMode={iconInTextMode}
+            setIconMode={setIconInTextMode}
+          >
             <p>
               <dfn>Full-stack</dfn> means I can work on both the frontend, i.e.,
               what the client sees (a web page or a web app) and the backend,
@@ -115,7 +97,11 @@ export function AboutMe() {
             </p>
           </Article>
 
-          <Article title="A System Developer">
+          <Article
+            title="A System Developer"
+            iconMode={iconInTextMode}
+            setIconMode={setIconInTextMode}
+          >
             <p>
               As a system developer, I'm familiar with the low-level languages{' '}
               <TextSkillIcon skill="C" />, <TextSkillIcon skill="Cpp" /> and{' '}
@@ -143,21 +129,56 @@ export function AboutMe() {
 interface ArticleProps {
   title: string;
   children: React.ReactNode;
+  iconMode?: boolean;
+  setIconMode?: (x: boolean) => void;
 }
 
 function Article(props: ArticleProps) {
-  const { title, children } = props;
+  const { title, children, iconMode, setIconMode } = props;
 
   return (
     <article className="w-full">
-      <FuturisticBox
-        header={
-          <h3 className="text-2xl max-md:text-xl font-bold py-1">{title}</h3>
-        }
-        innerClassName="rounded-md"
-      >
-        {children}
+      <FuturisticBox innerClassName="rounded-md">
+        <div className="mr-[100px]">
+          <FuturisticHeader>
+            <h3 className="text-2xl max-md:text-xl font-bold py-1">{title}</h3>
+          </FuturisticHeader>
+        </div>
+
+        {iconMode !== undefined && setIconMode !== undefined ? (
+          <IconSwitch checked={iconMode} onChange={setIconMode} />
+        ) : null}
+
+        <div className="px-5 py-3">{children}</div>
       </FuturisticBox>
     </article>
+  );
+}
+
+interface IconSwitchProps {
+  checked: boolean;
+  onChange: (checked: boolean) => void;
+}
+
+function IconSwitch(props: IconSwitchProps) {
+  const { checked, onChange } = props;
+
+  return (
+    <div className="absolute top-4 right-4 z-10 flex flex-row gap-1 items-stretch">
+      <FaIcons />
+      <Switch
+        className="mx-auto"
+        checked={checked}
+        onChange={onChange}
+        handleDiameter={15}
+        uncheckedIcon={false}
+        checkedIcon={false}
+        onColor="#888"
+        offColor="#888"
+        height={15}
+        width={30}
+      />
+      <IoTextOutline />
+    </div>
   );
 }

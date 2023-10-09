@@ -5,7 +5,6 @@
 .futuristic-box-inner {
   border-width: 1px;
   border-color: var(--futuristic-box-border-color, black);
-  /* border-radius: 0.75rem; */
 
   background-color: var(--futuristic-box-bg-color, white);
 
@@ -19,7 +18,7 @@
   );
 }
 
-.futuristic-box-inner.futuristic-box-no-header {
+.futuristic-box-inner.futuristic-box-tl-chamfer {
   clip-path: polygon(
     0% 0%,
     100% 0%,

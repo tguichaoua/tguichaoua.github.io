@@ -1,13 +1,19 @@
+import { HTMLProps } from 'react';
 import './futiristic-box.css';
 
 export interface FuturisticBoxProps extends React.HTMLProps<HTMLDivElement> {
-  header?: React.ReactNode;
   innerClassName?: string;
+  topLeftChamfer?: boolean;
 }
 
 export function FuturisticBox(props: FuturisticBoxProps) {
-  const { header, children, className, innerClassName, ...wrapperProps } =
-    props;
+  const {
+    children,
+    className,
+    innerClassName,
+    topLeftChamfer,
+    ...wrapperProps
+  } = props;
   return (
     <div
       className={'futuristic-box-wrapper ' + (className ?? '')}
@@ -15,14 +21,24 @@ export function FuturisticBox(props: FuturisticBoxProps) {
     >
       <div
         className={
-          'futuristic-box-inner ' +
-          (!header ? 'futuristic-box-no-header ' : ' ') +
+          'futuristic-box-inner' +
+          (topLeftChamfer === true ? ' futuristic-box-tl-chamfer ' : ' ') +
           (innerClassName ?? '')
         }
       >
-        {header ? <div className="futuristic-box-header">{header}</div> : null}
-        <div className="px-5 py-3">{children}</div>
+        {children}
       </div>
     </div>
+  );
+}
+
+export function FuturisticHeader(props: HTMLProps<HTMLDivElement>) {
+  const { className, ...divProps } = props;
+
+  return (
+    <div
+      className={'futuristic-box-header ' + (className ?? '')}
+      {...divProps}
+    ></div>
   );
 }
