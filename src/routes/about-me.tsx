@@ -108,7 +108,7 @@ export function AboutMe() {
               <TextSkillIcon skill="Rust" />, though, I'm more familiar with the
               last one. So don't hesitate to ask me about Rust{' '}
               <span
-                className="font-emoji cursor-pointer"
+                className="font-emoji cursor-pointer text-neon-[3px] text-red-500"
                 onClick={() => document.dispatchEvent(new ConfettiEvent())}
               >
                 🦀
