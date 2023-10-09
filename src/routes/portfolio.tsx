@@ -80,15 +80,21 @@ function ProjectSection(props: ProjectSectionProps) {
 
   return (
     <FuturisticBox innerClassName="rounded-md">
-      <div className="absolute">
-        <a href={repositoryUrl} target="_blank" className="relative top-[10px]">
-          <FaGithub />
-        </a>
-      </div>
-      <h3 className="text-center text-2xl font-bold">{title}</h3>
-      <p className="italic text-sm mt-3">{description}</p>
-      <div className="flex flex-row flex-wrap gap-1 mt-3 mb-1">
-        {skillIcons}
+      <div className="px-5 py-3">
+        <div className="absolute">
+          <a
+            href={repositoryUrl}
+            target="_blank"
+            className="relative top-[10px]"
+          >
+            <FaGithub />
+          </a>
+        </div>
+        <h3 className="text-center text-2xl font-bold">{title}</h3>
+        <p className="italic text-sm mt-3">{description}</p>
+        <div className="flex flex-row flex-wrap gap-1 mt-3 mb-1">
+          {skillIcons}
+        </div>
       </div>
     </FuturisticBox>
   );

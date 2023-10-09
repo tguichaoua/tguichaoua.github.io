@@ -69,8 +69,10 @@ function SkillSection(props: SkillSectionProps) {
 
   return (
     <FuturisticBox innerClassName="rounded-md">
-      <h3 className="text-center text-2xl mb-5 font-bold">{title}</h3>
-      {skillIcons}
+      <div className="px-5 py-3">
+        <h3 className="text-center text-2xl mb-5 font-bold">{title}</h3>
+        {skillIcons}
+      </div>
     </FuturisticBox>
   );
 }

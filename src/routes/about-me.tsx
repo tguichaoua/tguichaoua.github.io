@@ -138,7 +138,7 @@ function Article(props: ArticleProps) {
 
   return (
     <article className="w-full">
-      <FuturisticBox innerClassName="rounded-md">
+      <FuturisticBox innerClassName="rounded-md" topLeftChamfer>
         <div className="mr-[100px]">
           <FuturisticHeader>
             <h3 className="text-2xl max-md:text-xl font-bold py-1">{title}</h3>
