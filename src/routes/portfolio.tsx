@@ -47,8 +47,9 @@ export function Portfolio() {
             <>
               A plugin for the{' '}
               <a
-                href="https://bevyengine.org/"
+                rel="noopener noreferrer nofollow"
                 target="_blank"
+                href="https://bevyengine.org/"
                 className="underline"
               >
                 bevy game engine
@@ -83,8 +84,9 @@ function ProjectSection(props: ProjectSectionProps) {
       <div className="px-5 py-3">
         <div className="absolute">
           <a
-            href={repositoryUrl}
+            rel="noopener noreferrer nofollow"
             target="_blank"
+            href={repositoryUrl}
             className="relative top-[10px]"
           >
             <FaGithub />

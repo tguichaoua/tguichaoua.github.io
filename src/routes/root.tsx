@@ -60,16 +60,25 @@ export function Root() {
         </div>
 
         <div className="flex flex-row items-center justify-center gap-3 text-4xl mt-6">
-          <a href="https://github.com/tguichaoua" target="_blank">
+          <a
+            rel="noopener noreferrer nofollow"
+            target="_blank"
+            href="https://github.com/tguichaoua"
+          >
             <FaGithubSquare />
           </a>
           <a
-            href="https://www.linkedin.com/in/tristan-guichaoua/"
+            rel="noopener noreferrer nofollow"
             target="_blank"
+            href="https://www.linkedin.com/in/tristan-guichaoua/"
           >
             <FaLinkedin />
           </a>
-          <a href="https://ko-fi.com/tguichaoua" target="_blank">
+          <a
+            rel="noopener noreferrer nofollow"
+            target="_blank"
+            href="https://ko-fi.com/tguichaoua"
+          >
             <SiKofi />
           </a>
         </div>
