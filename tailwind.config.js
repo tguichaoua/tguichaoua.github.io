@@ -19,5 +19,8 @@ export default {
       },
     },
   },
-  plugins: [require('./plugins/text-neon')],
+  plugins: [
+    require('tailwind-scrollbar')({ nocompatible: true }),
+    require('./plugins/text-neon'),
+  ],
 };
