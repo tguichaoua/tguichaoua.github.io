@@ -10,7 +10,7 @@ import { useEffect } from 'react';
  */
 export function useDocumentEvent<K extends keyof DocumentEventMap>(
   type: K,
-  listener: (this: Document, ev: DocumentEventMap[K]) => any,
+  listener: (this: Document, ev: DocumentEventMap[K]) => unknown,
   options?: boolean | AddEventListenerOptions
 ) {
   useEffect(() => {
@@ -18,5 +18,5 @@ export function useDocumentEvent<K extends keyof DocumentEventMap>(
     return () => {
       document.removeEventListener(type, listener);
     };
-  }, []);
+  }, [type, listener, options]);
 }

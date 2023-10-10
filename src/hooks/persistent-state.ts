@@ -22,7 +22,7 @@ export function usePersistentState<S>(
 
   useEffect(() => {
     window.localStorage.setItem(key, JSON.stringify(state));
-  }, [state]);
+  }, [key, state]);
 
   return [state, setState];
 }

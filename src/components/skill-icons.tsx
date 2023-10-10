@@ -28,7 +28,8 @@ export const TextSkillIconContext = createContext<TextSkillIconMode>('icon');
 
 export function TextSkillIcon(props: TextSkillIconProps) {
   const { skill, mode } = props;
-  const mode_ = mode ?? useContext(TextSkillIconContext);
+  const contextMode = useContext(TextSkillIconContext);
+  const mode_ = mode ?? contextMode;
   if (mode_ === 'icon') {
     return <SkillIcon skill={skill} width={20} className="inline" />;
   } else {
