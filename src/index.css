@@ -23,6 +23,8 @@ body {
   @apply bg-back;
   @apply text-front;
   @apply max-sm:text-sm text-base lg:text-lg;
+
+  @apply scrollbar-thin scrollbar-track-transparent scrollbar-thumb-front scrollbar-thumb-rounded;
 }
 
 /* -------------------------------------------------------------------------- */
