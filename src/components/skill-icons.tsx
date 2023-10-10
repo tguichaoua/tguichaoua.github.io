@@ -19,12 +19,12 @@ export function SkillIcon(props: SkillIconProps) {
 
 export type TextSkillIconMode = 'icon' | 'text';
 
+export const TextSkillIconContext = createContext<TextSkillIconMode>('icon');
+
 export interface TextSkillIconProps {
   skill: Skill;
   mode?: TextSkillIconMode;
 }
-
-export const TextSkillIconContext = createContext<TextSkillIconMode>('icon');
 
 export function TextSkillIcon(props: TextSkillIconProps) {
   const { skill, mode } = props;
