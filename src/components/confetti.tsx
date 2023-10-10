@@ -24,7 +24,7 @@ const DEFAULT_BURST_OPTIONS: Required<BurstOptions> = {
 };
 
 export function Confetti(props: ConfettiProps) {
-  const { eventName, ...burstOption } = {
+  const { eventName, ...burstOptions } = {
     eventName: DEFAULT_EVENT_NAME,
     ...props,
   };
@@ -36,7 +36,7 @@ export function Confetti(props: ConfettiProps) {
       if (!container.current || !(ev instanceof ConfettiEvent)) return;
       const { amount, content } = {
         ...DEFAULT_BURST_OPTIONS,
-        ...burstOption,
+        ...burstOptions,
         ...ev.detail,
       };
 
@@ -55,7 +55,7 @@ export function Confetti(props: ConfettiProps) {
         container.current.appendChild(e);
       }
     },
-    [burstOption]
+    [burstOptions]
   );
 
   useEffect(() => {
