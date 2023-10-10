@@ -28,7 +28,9 @@ export function AboutMe() {
 
   return (
     <>
-      <TextSkillIconContext.Provider value={iconInTextMode ? 'text' : 'icon'}>
+      <TextSkillIconContext.Provider
+        value={{ mode: iconInTextMode ? 'text' : 'icon' }}
+      >
         <main
           id="about-me"
           className="flex flex-col items-center gap-5 ml-[10%] mr-[10%]"

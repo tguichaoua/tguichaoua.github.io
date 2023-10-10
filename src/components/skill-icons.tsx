@@ -19,7 +19,11 @@ export function SkillIcon(props: SkillIconProps) {
 
 export type TextSkillIconMode = 'icon' | 'text';
 
-export const TextSkillIconContext = createContext<TextSkillIconMode>('icon');
+export interface TextSkillIconContext {
+  mode?: TextSkillIconMode;
+}
+
+export const TextSkillIconContext = createContext<TextSkillIconContext>({});
 
 export interface TextSkillIconProps {
   skill: Skill;
@@ -27,10 +31,11 @@ export interface TextSkillIconProps {
 }
 
 export function TextSkillIcon(props: TextSkillIconProps) {
-  const { skill, mode } = props;
-  const contextMode = useContext(TextSkillIconContext);
-  const mode_ = mode ?? contextMode;
-  if (mode_ === 'icon') {
+  const context = useContext(TextSkillIconContext);
+
+  const { skill, mode } = { mode: 'icon', ...props, ...context };
+
+  if (mode === 'icon') {
     return <SkillIcon skill={skill} width={20} className="inline" />;
   } else {
     const { name, mainColor } = SKILLS[skill];
