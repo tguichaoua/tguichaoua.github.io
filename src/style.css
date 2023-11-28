@@ -1,0 +1,17 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+a {
+  text-decoration: underline;
+}
+
+body {
+  margin: 0;
+  display: flex;
+  place-items: center;
+  min-width: 320px;
+  min-height: 100vh;
+}
